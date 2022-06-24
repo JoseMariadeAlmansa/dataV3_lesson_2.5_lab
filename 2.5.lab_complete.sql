@@ -17,7 +17,7 @@ SELECT COUNT(DISTINCT last_name) FROM sakila.actor;
 # I convert the column into dates, and calculate the difference between the max and the min
 SELECT DATEDIFF(MAX(CONVERT(rental_date,DATE)),MIN(CONVERT(rental_date,DATE))) AS opertaing_days FROM sakila.rental; 
 #----------------------------7. Show rental info with additional columns month and weekday. Get 20 results.---------------------------#
-SELECT DAYNAME(rental_date) AS weekday, MONTH(rental_date) AS month FROM sakila.rental;
+SELECT DAYNAME(rental_date) AS weekday, MONTHNAME(rental_date) AS month FROM sakila.rental;
 #---------8. Add an additional column day_type with values 'weekend' and 'workday' depending on the rental day of the week.-----------#
 SELECT rental_date,
 CASE # Set the if conditions for the weekend days
